@@ -25,6 +25,7 @@ import {
   missileSiloIcon,
   portIcon,
   samLauncherIcon,
+   tankStationIcon,
   warshipIcon,
 } from "../HotbarIcons";
 
@@ -40,6 +41,7 @@ export class UnitDisplay extends LitElement implements Controller {
   private _factories = 0;
   private _missileSilo = 0;
   private _port = 0;
+    private _tankStation = 0;
   private _defensePost = 0;
   private _samLauncher = 0;
   private allDisabled = false;
@@ -102,6 +104,7 @@ export class UnitDisplay extends LitElement implements Controller {
     this._samLauncher = player.totalUnitLevels(UnitType.SAMLauncher);
     this._factories = player.totalUnitLevels(UnitType.Factory);
     this._warships = player.totalUnitLevels(UnitType.Warship);
+    this._tankStation = player.totalUnitLevels(UnitType.TankStation);
     this.requestUpdate();
   }
 
@@ -149,6 +152,13 @@ export class UnitDisplay extends LitElement implements Controller {
             UnitType.DefensePost,
             "defense_post",
             this.keybinds["buildDefensePost"]?.key ?? "4",
+          )}
+                    ${this.renderUnitItem(
+            tankStationIcon,
+            this._tankStation,
+            UnitType.TankStation,
+            "tank_station",
+            "KeyT",
           )}
           ${this.renderUnitItem(
             missileSiloIcon,

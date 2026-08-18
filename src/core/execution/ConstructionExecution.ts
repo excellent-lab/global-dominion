@@ -139,6 +139,8 @@ export class ConstructionExecution implements Execution {
       case UnitType.DefensePost:
         this.mg.addExecution(new DefensePostExecution(this.structure!));
         break;
+      case UnitType.TankStation:
+        break;
       case UnitType.SAMLauncher:
         this.mg.addExecution(
           new SAMLauncherExecution(player, null, this.structure!),
@@ -163,6 +165,7 @@ export class ConstructionExecution implements Execution {
       case UnitType.Port:
       case UnitType.MissileSilo:
       case UnitType.DefensePost:
+      case UnitType.TankStation:
       case UnitType.SAMLauncher:
       case UnitType.City:
       case UnitType.Factory:

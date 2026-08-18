@@ -1,0 +1,23 @@
+src/client/hud/layers/UnitDisplay.ts:107:    this._tankStation = player.totalUnitLevels(UnitType.TankStation);
+src/client/hud/layers/UnitDisplay.ts-108-    this.requestUpdate();
+src/client/hud/layers/UnitDisplay.ts-109-  }
+src/client/hud/layers/UnitDisplay.ts-110-
+src/client/hud/layers/UnitDisplay.ts-111-  render() {
+src/client/hud/layers/UnitDisplay.ts-112-    const myPlayer = this.game?.myPlayer();
+src/client/hud/layers/UnitDisplay.ts-113-    if (
+src/client/hud/layers/UnitDisplay.ts-114-      !this.game ||
+src/client/hud/layers/UnitDisplay.ts-115-      !myPlayer ||
+src/client/hud/layers/UnitDisplay.ts-116-      this.game.inSpawnPhase() ||
+src/client/hud/layers/UnitDisplay.ts-117-      !myPlayer.isAlive()
+--
+src/client/hud/layers/UnitDisplay.ts:159:            UnitType.TankStation,
+src/client/hud/layers/UnitDisplay.ts-160-            "tank_station",
+src/client/hud/layers/UnitDisplay.ts-161-            "KeyT",
+src/client/hud/layers/UnitDisplay.ts-162-          )}
+src/client/hud/layers/UnitDisplay.ts-163-          ${this.renderUnitItem(
+src/client/hud/layers/UnitDisplay.ts-164-            missileSiloIcon,
+src/client/hud/layers/UnitDisplay.ts-165-            this._missileSilo,
+src/client/hud/layers/UnitDisplay.ts-166-            UnitType.MissileSilo,
+src/client/hud/layers/UnitDisplay.ts-167-            "missile_silo",
+src/client/hud/layers/UnitDisplay.ts-168-            this.keybinds["buildMissileSilo"]?.key ?? "5",
+src/client/hud/layers/UnitDisplay.ts-169-          )}
