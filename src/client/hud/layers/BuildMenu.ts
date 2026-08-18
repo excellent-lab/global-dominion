@@ -103,6 +103,13 @@ export const buildTable: BuildItemDisplay[][] = [
       description: "build_menu.desc.defense_post",
       key: "unit_type.defense_post",
       countable: true,
+    },    
+    {
+      unitType: UnitType.TankStation,
+      icon: shieldIcon,
+      description: "build_menu.desc.tank_station",
+      key: "unit_type.tank_station",
+      countable: true,
     },
     {
       unitType: UnitType.City,
