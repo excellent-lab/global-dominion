@@ -1451,6 +1451,7 @@ export class PlayerImpl implements Player {
         return this.landBasedUnitSpawn(targetTile);
       case UnitType.MissileSilo:
       case UnitType.DefensePost:
+      case UnitType.TankStation:
       case UnitType.SAMLauncher:
       case UnitType.City:
       case UnitType.Factory:

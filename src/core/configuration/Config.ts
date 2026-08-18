@@ -447,6 +447,15 @@ export class Config {
           constructionDuration: this.instantBuild() ? 0 : 5 * 10,
         };
         break;
+      case UnitType.TankStation:
+        info = {
+          cost: this.costWrapper(
+            (numUnits: number) => Math.min(300_000, (numUnits + 1) * 60_000),
+            UnitType.TankStation,
+          ),
+          constructionDuration: this.instantBuild() ? 0 : 5 * 10,
+        };
+        break;
       case UnitType.SAMLauncher:
         info = {
           cost: this.costWrapper(
