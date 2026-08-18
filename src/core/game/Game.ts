@@ -226,6 +226,7 @@ export const BuildableAttacks = unitTypeGroup([
 export const Structures = unitTypeGroup([
   UnitType.City,
   UnitType.DefensePost,
+  UnitType.TankStation,
   UnitType.SAMLauncher,
   UnitType.MissileSilo,
   UnitType.Port,
@@ -307,7 +308,7 @@ export interface UnitParamsMap {
   [UnitType.DefensePost]: Record<string, never>;
 
   [UnitType.TankStation]: Record<string, never>;
-  
+
   [UnitType.SAMLauncher]: Record<string, never>;
 
   [UnitType.City]: Record<string, never>;

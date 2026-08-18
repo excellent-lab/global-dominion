@@ -231,7 +231,17 @@ export class Config {
   defensePostSpeedBonus(): number {
     return 3;
   }
+  tankStationRange(): number {
+    return 25;
+  }
 
+  tankStationAttackBonus(): number {
+    return 0.75;
+  }
+
+  tankStationSpeedBonus(): number {
+    return 0.85;
+  }
   playerTeams(): TeamCountConfig {
     return this._gameConfig.playerTeams ?? 0;
   }
@@ -699,6 +709,18 @@ export class Config {
           speed *= this.defensePostSpeedBonus();
           break;
         }
+      }
+    }
+
+    for (const ts of gm.nearbyUnits(
+      tileToConquer,
+      gm.config().tankStationRange(),
+      UnitType.TankStation,
+    )) {
+      if (ts.unit.owner() === attacker) {
+        mag *= this.tankStationAttackBonus();
+        speed *= this.tankStationSpeedBonus();
+        break;
       }
     }
 
